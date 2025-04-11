@@ -1,6 +1,7 @@
 'use client';
 
 import { useChat } from '@ai-sdk/react';
+import { secret } from '@aws-amplify/backend';
 
 export default function Chat() {
   const { messages, input, handleInputChange, handleSubmit } = useChat();
@@ -22,7 +23,7 @@ export default function Chat() {
         <input
           className="fixed dark:bg-zinc-900 bottom-0 w-full max-w-md p-2 mb-8 border border-zinc-300 dark:border-zinc-800 rounded shadow-xl"
           value={input}
-          placeholder={process.env.OPENAI_API_KEY}
+          placeholder={secret('OPENAI_API_KEY').toString()}
           onChange={handleInputChange}
         />
       </form>
