@@ -1,5 +1,7 @@
 import { createOpenAI } from '@ai-sdk/openai';
 import { streamText } from 'ai';
+import 'dotenv/config';
+
 
 // Allow streaming responses up to 30 seconds
 export const maxDuration = 30;
