@@ -1,5 +1,6 @@
 export async function GET() {
-    return new Response(JSON.stringify({ message: "Hello from Route Handler" }), {
+    console.log('OPENAI_API_KEY:', process.env.OPENAI_API_KEY);
+    return new Response(JSON.stringify({ message: process.env.OPENAI_API_KEY }), {
       headers: { "Content-Type": "application/json" },
     });
   }
